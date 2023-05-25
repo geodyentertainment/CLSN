@@ -4,7 +4,7 @@ lock = 2g
 
 square = (x_grid: @number, y_grid: @number, Objcol: @array = [255, 255, 255], useGroup: @bool = true){
     col = ?c
-    col.set(Objcol[0], Objcol[1], Objcol[2])
+    col.set(rgb8(Objcol[0], Objcol[1], Objcol[2]))
     let y_grid = y_grid
     y_grid -= 1
     let x_grid = x_grid
@@ -37,7 +37,7 @@ circle = (x_grid: @number, y_grid: @number, color: @array = [255, 255, 255], use
     let x_grid = x_grid
     x_grid -= 7
     col = ?c
-    col.set(color[0], color[1], color[2])
+    col.set(rgb8(color[0], color[1], color[2]))
     if useGroup == true {
         spriteG = ?g
         $.add(obj{ 
